@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="utf-8"%>
 <%@ page contentType="text/html; charset=utf-8" %>
-<% request.setCharacterEncoding("UTF-8"); %>
+<%request.setCharacterEncoding("UTF-8"); %>
 <html>
   
   <body>
@@ -20,19 +20,16 @@
       String useid;
       String password;
       String email;
-      String photopath;
-      String text;
+      String photopath="default.jpg";
     %>
     
     <% //接收html注册表单数据
        useid=request.getParameter("username");
        password=request.getParameter("password");
        email=request.getParameter("useremail");
-       photopath=request.getParameter("photofile");
-       text=request.getParameter("usercomments");
      %>
    
-   <% String insert_sql = "INSERT INTO user(useid,password,email) VALUES ('"+useid+"','" +password+"','"+email+"')"; 
+   <% String insert_sql = "INSERT INTO user(useid,password,email,photopath) VALUES ('"+useid+"','" +password+"','"+email+"','"+photopath+"')"; 
       try{
          stmt.executeUpdate(insert_sql);
          out.print("注册成功！3秒后跳转到登录界面"); }
@@ -55,8 +52,7 @@
   		  if(loginpassword.equals(rs_password)){
   		 	   out.print("登录成功！\n");
                session.setAttribute("name",loginname);
-               String username=(String)session.getAttribute("name");
-               out.print(username+"欢迎您！");
+               response.sendRedirect("zone.jsp");
   		  }else{
  		   out.print("您输入的密码不正确，请重新输入！");
  		  }
@@ -67,7 +63,7 @@
 	}	
 	%>
     
-  
+
    <% if(stmt!=null)
      {
        stmt.close();

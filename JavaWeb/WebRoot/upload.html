@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta  http-equiv="Content-Type" content="text/html charset="UTF-8">
-	<title>ÉÏ´«×ÊÁÏ</title>
-	<!--Á´½ÓBootStrapµÄcssÎÄ¼þ-->
+	<meta  http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>ä¸Šä¼ èµ„æ–™</title>
+	<!--é“¾æŽ¥BootStrapçš„cssæ–‡ä»¶-->
 	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -11,7 +11,7 @@
 	
 </head>
 <body>
-	<!--nav±êÇ©£¬µ¼º½À¸-->
+	<!--navæ ‡ç­¾ï¼Œå¯¼èˆªæ -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -21,71 +21,71 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">ÕâÊÇ±êÌâ</a>
+				<a class="navbar-brand" href="#">è¿™æ˜¯æ ‡é¢˜</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">¹¦ÄÜ1</a></li>
+					<li><a href="#">åŠŸèƒ½1</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">¹¦ÄÜ2<span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">åŠŸèƒ½2<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-header">»¨»Ü</li>
-								<li><a href="#">×Ï¾£»¨</a></li>
-								<li><a href="#">ÆäËûÆ·ÖÖ</a></li>
+								<li class="dropdown-header">èŠ±å‰</li>
+								<li><a href="#">ç´«è†èŠ±</a></li>
+								<li><a href="#">å…¶ä»–å“ç§</a></li>
 
 								<li class="divider"></li>
 
-								<li class="dropdown-header">¹¦ÄÜ</li>
-								<li><a href="#">Ð£Ê·¹Ý</a></li>
-								<li><a href="#">ÐÐÕþÂ¥</a></li>
+								<li class="dropdown-header">åŠŸèƒ½</li>
+								<li><a href="#">æ ¡å²é¦†</a></li>
+								<li><a href="#">è¡Œæ”¿æ¥¼</a></li>
 							</ul>
 					</li>
-					<li><a href="#">¹¦ÄÜ3</a></li>
+					<li><a href="#">åŠŸèƒ½3</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
 	<div class="container">
-		<h1>ÉÏ´«×ÊÁÏ</h1>
+		<h1>ä¸Šä¼ èµ„æ–™</h1>
 		<form action="upload.jsp" method="post" enctype="multipart/form-data" class="form-horizontal">
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-4">
-					<input name="massagename" type="text" class="form-control" id="data-name" placeholder="ÄúÉÏ´«×ÊÁÏµÄÌâÄ¿">
+					<input name="massagename" type="text" class="form-control" id="data-name" placeholder="æ‚¨ä¸Šä¼ èµ„æ–™çš„é¢˜ç›®">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-4">
-					<textarea name="massageintroduce" class="form-control"  id="" cols="48" rows="8" placeholder="ÄúÉÏ´«×ÊÁÏµÄ¼ò½é"></textarea>
+					<textarea name="massageintroduce" class="form-control"  id="" cols="48" rows="8" placeholder="æ‚¨ä¸Šä¼ èµ„æ–™çš„ç®€ä»‹"></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 			    <div class="col-sm-offset-4 col-sm-4">
-				    <label for="exampleInputFile">Ñ¡ÔñÎÄ¼þ</label>
+				    <label for="exampleInputFile">é€‰æ‹©æ–‡ä»¶</label>
 				    <input type="file" id="exampleInputFile" name="file">
-				    <p class="help-block">Ö»Ö§³Ö.zip/.rarºó×ºÃûÎÄ¼þ</p>
+				    <p class="help-block">åªæ”¯æŒ.zip/.raråŽç¼€åæ–‡ä»¶</p>
 			    </div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-4">
 					<label class="radio-inline">
-					<input name="uploadtype" type="radio" id="inlineRadio1" value="read"> ÔÄ¶Á
+					<input name="uploadtype" type="radio" id="inlineRadio1" value="read"> é˜…è¯»
 					</label>
 					<label class="radio-inline">
-					<input name="uploadtype" type="radio" id="inlineRadio2" value="listen"> ÌýÁ¦
+					<input name="uploadtype" type="radio" id="inlineRadio2" value="listen"> å¬åŠ›
 					</label>
 					<label class="radio-inline">
-					<input name="uploadtype" type="radio" id="inlineRadio3" value="write"> Ð´×÷
+					<input name="uploadtype" type="radio" id="inlineRadio3" value="write"> å†™ä½œ
 					</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-6">
-					<input type="submit" class="col-sm-8 btn btn-success"  value="ÉÏ´«ÎÄ¼þ"/>
+					<input type="submit" class="col-sm-8 btn btn-success"  value="ä¸Šä¼ æ–‡ä»¶"/>
 				</div>
 				<br />
 				<div class="col-sm-offset-4 col-sm-6 btn1">
-					<button type="reset" class="col-sm-8 btn btn-danger">ÖØÉè</button>
+					<button type="reset" class="col-sm-8 btn btn-danger">é‡è®¾</button>
 				</div>
 			</div>
 		</form>

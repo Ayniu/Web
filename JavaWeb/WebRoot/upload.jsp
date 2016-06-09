@@ -26,12 +26,14 @@
 	%>
 
    <% //获取上传信息
+   
        String massagename=smart.getRequest().getParameter("massagename");
        String massageintroduce=smart.getRequest().getParameter("massageintroduce");
        String uploadtype=smart.getRequest().getParameter("uploadtype");
        String massagepath=smart.getFiles().getFile(0).getFileName();
        String useid="ayniu";
     %>
+
 
 	<%  //文件名保存到数据库
 		String insertfile_sql = "INSERT INTO upload(useid,massagename,massageintroduce,uploadtype,massagepath)"
