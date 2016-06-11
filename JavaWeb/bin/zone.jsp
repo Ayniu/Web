@@ -1,5 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="utf-8"%>
-<%@ page import="com.jspsmart.upload.*,java.util.*,java.sql.*"%>
+<%@ page import="org.lxh.smart.*,java.util.*,java.sql.*"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <%
 String path = request.getContextPath();
@@ -24,7 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 </head>
 <body>
-	<head>
 	<!--nav标签，导航栏-->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
@@ -35,14 +34,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><b>主页</b></a>
+				<a class="navbar-brand" href="#">这是标题</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="datalist.jsp">资料库</a></li>
-					<li><a href="message.jsp">留言板</a></li>
-					<!-- <li class="dropdown">
-						<a href="message.jsp" class="dropdown-toggle" data-toggle="dropdown">留言板<span class="caret"></span></a>
+					<li><a href="#">功能1</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">功能2<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-header">花卉</li>
 								<li><a href="#">紫荆花</a></li>
@@ -53,14 +51,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="dropdown-header">功能</li>
 								<li><a href="#">校史馆</a></li>
 								<li><a href="#">行政楼</a></li>
-							</ul> -->
+							</ul>
 					</li>
-					<li><a href="zone.jsp">个人中心</a></li>
+					<li><a href="#">功能3</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	</head>
 
 	<div class="container">
 		
@@ -130,7 +127,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 
 					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#user-upload">上传资料</button>
-				
+					<!--Modal-->
 					<div class="modal fade" id="user-upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 					  	<div class="modal-dialog" role="document">
 					    	<div class="modal-content">
@@ -147,7 +144,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						        		</div>
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-8">
-												<textarea name="massageintroduce" class="form-control" name="data-introduction" id="" cols="48" rows="8" placeholder="您上传资料的简介(字数控制在100以内哦~)"></textarea>
+												<textarea name="massageintroduce" class="form-control" name="data-introduction" id="" cols="48" rows="8" placeholder="您上传资料的简介"></textarea>
 											</div>
 										</div>
 										<div class="form-group">
@@ -160,13 +157,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-8">
 												<label class="radio-inline">
-												<input type="radio" name="uploadtype" id="inlineRadio1" value="阅读"> 阅读
+												<input type="radio" name="uploadtype" id="inlineRadio1" value="read"> 阅读
 												</label>
 												<label class="radio-inline">
-												<input type="radio" name="uploadtype" id="inlineRadio2" value="听力"> 听力
+												<input type="radio" name="uploadtype" id="inlineRadio2" value="listen"> 听力
 												</label>
 												<label class="radio-inline">
-												<input type="radio" name="uploadtype" id="inlineRadio3" value="写作"> 写作
+												<input type="radio" name="uploadtype" id="inlineRadio3" value="write"> 写作
 												</label>
 											</div>
 										</div>
@@ -180,7 +177,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					    	</div>
 					 	</div>
 					</div>
- 
+
 					<a href="index.jsp" role="button" class="btn btn-primary">返回首页</a>
 				</div>
 

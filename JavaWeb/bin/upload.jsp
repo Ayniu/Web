@@ -1,15 +1,20 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-<%@ page language="java" import="com.jspsmart.upload.*,java.util.*,java.sql.*" pageEncoding="utf-8"%>
+<%@ page contentType="text/html" pageEncoding="utf-8"%>
+<%@ page import="org.lxh.smart.*,java.util.*,java.sql.*"%>
 <% request.setCharacterEncoding("UTF-8"); %>
+<html>
+<head>
+<title>上传结果</title>
+</head>
 
+<body>
     <%  //连接数据库
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/text", "root", "admin");
 	    Statement stmtul = con.createStatement();
 	%>
-    
-    <%
+
+	<%
 		SmartUpload smart = new SmartUpload();
 		smart.initialize(pageContext);
 		smart.upload();
@@ -29,18 +34,18 @@
     %>
 
 	<%  //文件名保存到数据库
-		String insertfile_sql = "INSERT INTO upload(useid,massagename,massageintroduce,uploadtype,massagepath,uploaddate)"
-		+" VALUES ('"+username+"','"+ massagename + "','" + massageintroduce + "','"+uploadtype+"','" + massagepath +"'," +"now())";
+		String insertfile_sql = "INSERT INTO upload(useid,massagename,massageintroduce,uploadtype,massagepath)"
+		+" VALUES ('"+username+"','"+ massagename + "','" + massageintroduce + "','"+uploadtype+"','" + massagepath + "')";
 			try {
 				stmtul.executeUpdate(insertfile_sql);
-				out.print("上传成功！3秒后跳转到个人空间"); 
-				%> <meta http-equiv="refresh" content="3; url=zone.jsp"> <%
+				out.print("上传成功！");
 			} catch (Exception e) {
-				out.print("上传失败！介绍文字过多，请重试（3秒回退到个人空间）"); 
-				%> <meta http-equiv="refresh" content="3; url=zone.jsp"> <%
+				out.print("上传失败！");
 			}
-      %>
-	
-  </body>
-
+     
+%>
+    <center>
+		<a href="upload.html">继续上传</a>
+	</center>
+</body>
 </html>

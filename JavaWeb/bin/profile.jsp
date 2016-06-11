@@ -1,5 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="utf-8"%>
-<%@ page import="com.jspsmart.upload.*,java.util.*,java.sql.*"%>
+<%@ page import="org.lxh.smart.*,java.util.*,java.sql.*"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <html>
 <head>

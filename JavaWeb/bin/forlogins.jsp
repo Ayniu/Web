@@ -2,11 +2,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%request.setCharacterEncoding("UTF-8"); %>
 <html>
-<head>
-   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-</head>
+  
   <body>
    
    <% //连接数据库
@@ -36,25 +32,12 @@
    <% String insert_sql = "INSERT INTO user(useid,password,email,photopath) VALUES ('"+useid+"','" +password+"','"+email+"','"+photopath+"')"; 
       try{
          stmt.executeUpdate(insert_sql);
-         %>
-         <div id="myAlert" class="alert alert-success">
-          <a href="#" class="close" data-dismiss="alert">&times;</a>
-          <strong>恭喜~_~注册成功！</strong>（3秒后跳转到登录界面）
-         </div>
-         <meta http-equiv="refresh" content="3; url=login.html">
-         <% 
-         }
+         out.print("注册成功！3秒后跳转到登录界面"); }
       catch(Exception e){
-        %>
-  		    <div class="alert alert-warning">
-               <a href="#" class="close" data-dismiss="alert">
-               &times;
-               </a>
-               <strong>注册信息有误，请重新注册！</strong>(3秒后自动回到注册页面)
-             </div>
-             <meta http-equiv="refresh" content="3; url=register.html">
-           <%}
-        
+         out.print("注册失败！3秒后跳转到登录界面");}
+         %>
+     <meta http-equiv="refresh" content="3; url=login.html">
+    <%  
      } else if(registerorlogin.equals("login")){
    
      //定义并接收登录html数据
@@ -71,27 +54,10 @@
                session.setAttribute("name",loginname);
                response.sendRedirect("zone.jsp");
   		  }else{
-  		  %>
-  		    <div class="alert alert-warning">
-               <a href="#" class="close" data-dismiss="alert">
-               &times;
-               </a>
-               <strong>您输入的密码不正确，请重新输入！</strong>(3秒后自动回到登录页面)
-             </div>
-             <meta http-equiv="refresh" content="3; url=login.html">
-           <%
- 		   
+ 		   out.print("您输入的密码不正确，请重新输入！");
  		  }
 		  }else{
-		 %>
-  		    <div class="alert alert-warning">
-               <a href="#" class="close" data-dismiss="alert">
-               &times;
-               </a>
-               <strong>您输入的用户名不正确，请重新输入！</strong>(3秒后自动回到登录页面)
-             </div>
-             <meta http-equiv="refresh" content="3; url=login.html">
-           <%
+		out.print("您输入的用户名不正确，请重新输入！");
 		}
 		}
 	}	

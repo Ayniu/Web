@@ -1,0 +1,46 @@
+.panel.panel-border
+{
+    border: 1px solid #ddd;
+}
+.panel
+{
+    padding: 20px;
+
+    background: #fff;
+}
+.topic-list .topic-list-item .avatar .avatar-img
+{
+    width: 48px;
+    height: 48px;
+
+    border-radius: 48px;
+}
+.row
+{
+    padding-top: 80px;
+}
+
+.sidebar
+{
+    padding-bottom: 15px;
+}
+.sidebar-column .header
+{
+    font-family: 微软雅黑;
+    font-size: 25px;
+
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    border-bottom: 2px solid #ccc;
+}
+.sidebar-column
+{
+    font-family: 微软雅黑;
+    font-size: 20px;
+
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
