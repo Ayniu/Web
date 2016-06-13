@@ -55,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li><a href="#">行政楼</a></li>
 							</ul> -->
 					</li>
-					<li><a href="zone.jsp">个人中心</a></li>
+					<!-- <li><a href="zone.jsp">个人中心</a></li> -->
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">

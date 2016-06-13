@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class DataListBean {
 	
+	private String userphotopath;
 	private String username;
 	private String dataname;
 	private String dataintroduce;
@@ -11,7 +12,12 @@ public class DataListBean {
 	private String datatype;
 	private Timestamp datadate;
 	
-	
+	public String getUserphotopath() {
+		return userphotopath;
+	}
+	public void setUserphotopath(String userphotopath) {
+		this.userphotopath = userphotopath;
+	}
 	public String getUsername() {
 		return username;
 	}

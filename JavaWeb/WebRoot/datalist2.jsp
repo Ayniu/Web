@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 
 <body>
+
 	<head>
 	<!--nav标签，导航栏-->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -97,45 +98,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="row" id="#">
 			<div class="col-sm-9">
 				
+				<%-- <% Boolean ischoose =false;
+				   session.setAttribute("ischoose",ischoose); %> --%>
+				
 					<%
-						//获取数据，并显示
-						String data_sql = "select * from upload order by uploaddate DESC";
-						ResultSet rs = stmt.executeQuery(data_sql);
-						List<DataListBean> list = new ArrayList<DataListBean>();
-						while (rs.next()) {
-							DataListBean data = new DataListBean();
-							data.setUsername(rs.getString("useid"));
-							data.setDataname(rs.getString("massagename"));
-							data.setDataintroduce(rs.getString("massageintroduce"));
-							data.setDatapath(rs.getString("massagepath"));
-							data.setDatatype(rs.getString("uploadtype"));
-							data.setDatadate(rs.getTimestamp("uploaddate"));
-							list.add(data);
-							
-						}
+						
+						List<DataListBean> list =(ArrayList<DataListBean>)session.getAttribute("datalist");
+						
 					%>
 
 					<%
-						if (list == null || list.size() < 1) {
-							out.print("<tr bgcolor='#FFFFFF' colspan='5'>没有任何上传文件哦！</tr>");
+					     int i=0;
+					     String photo_path;
+						 if (list == null || list.size() < 1) {
+				
+							out.print("<tr bgcolor='#FFFFFF' colspan='5'><b><center>没有相关的资料哦~</center></b></tr>");
+						 
 						} else {
 							for (DataListBean note : list) {
 							
-							String photo_path="";
-						    String photo_sql="select * from user where useid='"+note.getUsername()+"'";
-						    ResultSet rs_photo = null;
-							rs_photo = stmt.executeQuery(photo_sql);
-							if(rs_photo.next()){
-							photo_path=rs_photo.getString("photopath");
-						}
+						    //头像图片载入
+						    String photopath="";
+							String photo_sql="select * from user where useid='"+note.getUsername()+"'";
+							ResultSet rs2 = null;
+							rs2= stmt.executeQuery(photo_sql);
+							while(rs2.next()){
+							  photopath=(rs2.getString("photopath"));
+							}
 							
-					   SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm"); 
+					   SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");  
 					%>
 
 
 			<div class="media panel panel-border body">
 				<div class="media-left">
-					<img class="media-object avatar-img" src="photo/<%=photo_path%>">
+					<img class="media-object avatar-img" src="photo/<%=photopath%>">
 				</div>
 
 				<div class="media-body">
@@ -154,7 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<%
 				}
-				}
+			 }
 			%>
 		</div>
        
@@ -201,7 +198,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<button name="choose" value="all" type="submit" class="label label-default">所有</button>
 					</p></form>
 				</div>
-			    <div class="media panel panel-border body">
+				<div class="media panel panel-border body">
 			    <form action="searchdata.jsp" class="form-horizontal">
 				  <div class="col-sm-offset-2 col-sm-8">
 					<input name="searchtext" type="text" class="form-control" id="data-name" placeholder="请输入资料题目">
@@ -210,9 +207,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </form>
 			    </div>
 			    
+			</div>
 		</div>
-		</div>
-	</div> 
+	</div>
 	<!--页脚信息
 	<footer>
 		<div class="footer">
