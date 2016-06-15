@@ -43,5 +43,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					out.print("请重试！");
 				}
 			 }else{out.print("输入不可为空");} 
-			 
+         
+     	stmt.close();
+     	con.close();
+    
 			%>

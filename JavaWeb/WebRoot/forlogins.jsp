@@ -3,9 +3,9 @@
 <%request.setCharacterEncoding("UTF-8"); %>
 <html>
 <head>
-   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
   <body>
    
@@ -36,24 +36,13 @@
    <% String insert_sql = "INSERT INTO user(useid,password,email,photopath) VALUES ('"+useid+"','" +password+"','"+email+"','"+photopath+"')"; 
       try{
          stmt.executeUpdate(insert_sql);
-         %>
-         <div id="myAlert" class="alert alert-success">
-          <a href="#" class="close" data-dismiss="alert">&times;</a>
-          <strong>恭喜~_~注册成功！</strong>（3秒后跳转到登录界面）
-         </div>
-         <meta http-equiv="refresh" content="3; url=login.html">
-         <% 
+         session.setAttribute("tip_registersuccessful","successful");
+  		 response.sendRedirect("login.jsp");
          }
       catch(Exception e){
-        %>
-  		    <div class="alert alert-warning">
-               <a href="#" class="close" data-dismiss="alert">
-               &times;
-               </a>
-               <strong>注册信息有误，请重新注册！</strong>(3秒后自动回到注册页面)
-             </div>
-             <meta http-equiv="refresh" content="3; url=register.html">
-           <%}
+         session.setAttribute("tip_registerdefeat","defeat");
+  		 response.sendRedirect("register.jsp");
+  		 }
         
      } else if(registerorlogin.equals("login")){
    
@@ -67,31 +56,18 @@
  		 if (rs.next()){
  		   String rs_password=rs.getString("password");
   		  if(loginpassword.equals(rs_password)){
-  		 	   out.print("登录成功！\n");
+  		 	   
                session.setAttribute("name",loginname);
                response.sendRedirect("zone.jsp");
   		  }else{
-  		  %>
-  		    <div class="alert alert-warning">
-               <a href="#" class="close" data-dismiss="alert">
-               &times;
-               </a>
-               <strong>您输入的密码不正确，请重新输入！</strong>(3秒后自动回到登录页面)
-             </div>
-             <meta http-equiv="refresh" content="3; url=login.html">
-           <%
- 		   
+  		  
+  		     session.setAttribute("tip_password","您输入的密码不正确，请重新输入！");
+  		     response.sendRedirect("login.jsp");
  		  }
 		  }else{
-		 %>
-  		    <div class="alert alert-warning">
-               <a href="#" class="close" data-dismiss="alert">
-               &times;
-               </a>
-               <strong>您输入的用户名不正确，请重新输入！</strong>(3秒后自动回到登录页面)
-             </div>
-             <meta http-equiv="refresh" content="3; url=login.html">
-           <%
+		     
+		     session.setAttribute("tip_username","您输入的用户名不正确，请重新输入！");
+  		     response.sendRedirect("login.jsp");
 		}
 		}
 	}	

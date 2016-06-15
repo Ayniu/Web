@@ -17,7 +17,7 @@
 		System.out.print(s);
 		if (s.substring(s.length() - 3).equals("rar")
 				| s.substring(s.length() - 3).equals("zip")) {
-		smart.save("/file"); }//保存文件的路径
+		smart.save("/file"); //保存文件的路径
 	%>
 
    <% //获取上传信息
@@ -26,6 +26,7 @@
        String uploadtype=smart.getRequest().getParameter("uploadtype");
        String massagepath=smart.getFiles().getFile(0).getFileName();
        String username=(String)session.getAttribute("name");
+       
     %>
 
 	<%  //文件名保存到数据库
@@ -33,14 +34,17 @@
 		+" VALUES ('"+username+"','"+ massagename + "','" + massageintroduce + "','"+uploadtype+"','" + massagepath +"'," +"now())";
 			try {
 				stmtul.executeUpdate(insertfile_sql);
-				out.print("上传成功！3秒后跳转到个人空间"); 
-				%> <meta http-equiv="refresh" content="3; url=zone.jsp"> <%
-			} catch (Exception e) {
-				out.print("上传失败！介绍文字过多，请重试（3秒回退到个人空间）"); 
-				%> <meta http-equiv="refresh" content="3; url=zone.jsp"> <%
+				session.setAttribute("tip_uploadsuccess", "successful");
+		        response.sendRedirect("zone.jsp");
+		    } catch (Exception e) {
+				session.setAttribute("tip_uploaddefeat", "defeat");
+			    response.sendRedirect("zone.jsp");
 			}
-      %>
+			stmtul.close();
+			}else{
+			    session.setAttribute("tip_uploaderror", "error");
+			    response.sendRedirect("zone.jsp");
+			}
+			con.close();
 	
-  </body>
-
-</html>
+      %>

@@ -18,9 +18,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta charset="UTF-8">
 	<title>资料</title>
 	<!--链接BootStrap的css文件-->
-	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="datalist.css">
 </head>
@@ -44,21 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ul class="nav navbar-nav">
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
-					<!-- <li class="dropdown">
-						<a href="message.jsp" class="dropdown-toggle" data-toggle="dropdown">留言板<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-header">花卉</li>
-								<li><a href="#">紫荆花</a></li>
-								<li><a href="#">其他品种</a></li>
-
-								<li class="divider"></li>
-
-								<li class="dropdown-header">功能</li>
-								<li><a href="#">校史馆</a></li>
-								<li><a href="#">行政楼</a></li>
-							</ul> -->
-					</li>
-					<!-- <li><a href="zone.jsp">个人中心</a></li> -->
+					<li><a href="articlelist.jsp">文章中心</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -66,8 +52,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<% String username=(String)session.getAttribute("name");%>
 				<span>
 				<%if(username==null){%>
-				<a class="register btn btn-normal btn-success" href="register.html">注册</a>
-				<a class="login btn btn-normal btn-primary" href="login.html">登录</a>
+				<a class="register btn btn-normal btn-success" href="register.jsp">注册</a>
+				<a class="login btn btn-normal btn-primary" href="login.jsp">登录</a>
 				<%}else{%>
 				<% 
 						String photopath="";
@@ -83,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       				<ul class="dropdown-menu">
          				<li><a href="zone.jsp">个人中心</a></li>
          				<li class="divider"></li>
-         				<li><a href="login.html">退出</a></li>
+         				<li><a href="logout.jsp">退出</a></li>
 				<%}%>
 				</span>
 				<!-- end 登陆&注册栏 -->
@@ -155,37 +141,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			%>
 		</div>
        
-        <!--detail model-->
-					<div class="modal fade" id="detail" tabindex="-1" role="dialog"
-						aria-labelledby="myModalLabel">
-						<div class="modal-dialog" role="doucment">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-									<h4 class="modal-title" id="myModalLabel">资料详情</h4>
-								</div>
-								<div class="modal-body">
-									<h4>上传者:</h4>
-									<h4>资料类型:</h4>
-									<h4>资料简介:</h4>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">我知道了</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					</p>
-					
-
 			<div class="col-sm-3">
 				<div class="sidebar">
 					<!--通过给按钮添加 .btn-block 类可以将其拉伸至父元素100%的宽度，而且按钮也变为了块级（block）元素-->
-					<a href="zone.jsp" class="btn btn-info btn-block">上传文件</a>
+					<a href="uploadface.jsp" class="btn btn-info btn-block">上传文件</a>
 					<!-- <a href="#" class="btn btn-danger btn-block">下载文件</a> -->
 				</div>
 				<div class="sidebar-column" id="tags">
@@ -198,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<button name="choose" value="all" type="submit" class="label label-default">所有</button>
 					</p></form>
 				</div>
-				<div class="media panel panel-border body">
+				<div>
 			    <form action="searchdata.jsp" class="form-horizontal">
 				  <div class="col-sm-offset-2 col-sm-8">
 					<input name="searchtext" type="text" class="form-control" id="data-name" placeholder="请输入资料题目">
@@ -218,3 +177,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</footer>-->
 </body>
 </html>
+<%
+	stmt.close();
+	con.close();
+%>

@@ -23,7 +23,7 @@
 		if (s.substring(s.length() - 3).equals("jpg")
 				| s.substring(s.length() - 3).equals("png")
 				| s.substring(s.length() - 4).equals("jpeg")) {
-		smart.save("/photo"); }//保存文件的路径
+		smart.save("/photo"); //保存文件的路径
 	%>
 
    <% //获取上传信息
@@ -37,12 +37,21 @@
 		String sql ="update user set password='"+password+"',photopath='"+photopath+"',email='"+email+"' where useid='"+username+"'";
 			try {
 				stmtul.executeUpdate(sql);
-				out.print("修改成功！");
-				response.sendRedirect("zone.jsp");
+				session.setAttribute("tip_profilesuccessful", "successful");
+		        response.sendRedirect("zone.jsp");
 			} catch (Exception e) {
-				out.print("修改失败！");
+				
+				session.setAttribute("tip_profiledefeat", "defeat");
+		        response.sendRedirect("zone.jsp");
 			}
-     
+	
+			stmtul.close();
+			}else{
+			    session.setAttribute("tip_profileerror", "error");
+			    response.sendRedirect("zone.jsp");
+			}
+			con.close();
+		
 %>
 </body>
 </html>

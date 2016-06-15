@@ -17,9 +17,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta charset="UTF-8">
 	<title>首页</title>
 	<!--链接BootStrap的css文件-->
-	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="index.css">
 </head>
@@ -41,21 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ul class="nav navbar-nav">
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
-					<!-- <li class="dropdown">
-						<a href="message.jsp" class="dropdown-toggle" data-toggle="dropdown">留言板<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-header">花卉</li>
-								<li><a href="#">紫荆花</a></li>
-								<li><a href="#">其他品种</a></li>
-
-								<li class="divider"></li>
-
-								<li class="dropdown-header">功能</li>
-								<li><a href="#">校史馆</a></li>
-								<li><a href="#">行政楼</a></li>
-							</ul> -->
-					</li>
-					<!-- <li><a href="zone.jsp">个人中心</a></li> -->
+					<li><a href="articlelist.jsp">文章中心</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -63,8 +49,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<% String username=(String)session.getAttribute("name");%>
 				<span>
 				<%if(username==null){%>
-				<a class="register btn btn-normal btn-success" href="register.html">注册</a>
-				<a class="login btn btn-normal btn-primary" href="login.html">登录</a>
+				<a class="register btn btn-normal btn-success" href="register.jsp">注册</a>
+				<a class="login btn btn-normal btn-primary" href="login.jsp">登录</a>
 				<%}else{%>
 				<% 
 						String photopath="";
@@ -80,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       				<ul class="dropdown-menu">
          				<li><a href="zone.jsp">个人中心</a></li>
          				<li class="divider"></li>
-         				<li><a href="login.html">退出</a></li>
+         				<li><a href="logout.jsp">退出</a></li>
 				<%}%>
 				</span>
 				<!-- end 登陆&注册栏 -->
@@ -100,14 +86,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="#">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="img/首页红满堂.jpg" class="first-slide" alt="#.jpg">
+				<img src="photo/default.jpg" class="first-slide" alt="#.jpg">
 					<div class="container">
 						<div class="carousel-caption">
-							<form action="#" class="col-md-8 col-md-offset-2" role="search" mether="get">
+							<form action="searchdata.jsp" class="col-md-8 col-md-offset-2" role="search" mether="get">
 								<div class="form-group">
-									<input type="text" class="form-control colxs-8" placeholder="请输入您要查询的内容" name="query">
-									<!--
-									<button type="submit" class="btn btn-custom col-lg-3 col-xs-3">Search</button>-->
+									<input type="text" class="form-control colxs-8" placeholder="请输入您要查询的资料题目" name="searchtext">
 								</div>
 							</from>
 						</div>
@@ -294,3 +278,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </body>
 </html>
+<%
+	stmt.close();
+	con.close();
+%>

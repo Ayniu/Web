@@ -1,0 +1,14 @@
+.footer
+{
+    clear: both;/*该属性的值指出了不允许有浮动对象的边*/
+
+    width: 100%;
+    height: 50px;
+    margin-top: -50px;
+    padding: 10px;
+
+    text-align: center;
+
+    color: white;
+    background: #000;
+}

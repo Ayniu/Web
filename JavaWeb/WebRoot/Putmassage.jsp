@@ -34,7 +34,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				} catch (Exception e) {
 					out.print("留言失败！请重试！");
 				}
-			 
+				
+				stmt.close();
+				con.close();
+			
 			%>
   
 

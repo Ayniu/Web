@@ -15,9 +15,9 @@
 	<meta  http-equiv="Content-Type" content="text/html charset=UTF-8"> 
 	<title>上传资料</title>
 	<!--链接BootStrap的css文件-->
-	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="upload.css">
 	
 </head>
@@ -32,26 +32,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">这是标题</a>
+				<a class="navbar-brand" href="index.jsp"><b>主页</b></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">功能1</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">功能2<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-header">花卉</li>
-								<li><a href="#">紫荆花</a></li>
-								<li><a href="#">其他品种</a></li>
-
-								<li class="divider"></li>
-
-								<li class="dropdown-header">功能</li>
-								<li><a href="#">校史馆</a></li>
-								<li><a href="#">行政楼</a></li>
-							</ul>
-					</li>
-					<li><a href="#">功能3</a></li>
+					<li><a href="datalist.jsp">资料库</a></li>
+					<li><a href="message.jsp">留言板</a></li>
+					<li><a href="articlelist.jsp">文章中心</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -59,8 +46,8 @@
 				<% String username=(String)session.getAttribute("name");%>
 				<span>
 				<%if(username==null){%>
-				<a class="register btn btn-normal btn-success" href="register.html">注册</a>
-				<a class="login btn btn-normal btn-primary" href="login.html">登录</a>
+				<a class="register btn btn-normal btn-success" href="register.jsp">注册</a>
+				<a class="login btn btn-normal btn-primary" href="login.jsp">登录</a>
 				<%}else{%>
 				<% 
 						String photopath="";
@@ -71,12 +58,12 @@
 							photopath = rs.getString("photopath");
 						}
 					%>
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="photo/<%=photopath%>" alt="#" class="img-circle" height="30" width="30"><span class="caret"></span>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="photo/<%=photopath%>" alt="#" class="img-circle" height="32" width="32"><span class="caret"></span>
       				</a>
       				<ul class="dropdown-menu">
          				<li><a href="zone.jsp">个人中心</a></li>
          				<li class="divider"></li>
-         				<li><a href="login.html">退出</a></li>
+         				<li><a href="logout.jsp">退出</a></li>
 				<%}%>
 				</span>
 				<!-- end 登陆&注册栏 -->
@@ -90,45 +77,69 @@
 		<form action="upload.jsp" method="post" enctype="multipart/form-data" class="form-horizontal">
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-4">
-					<input name="massagename" type="text" class="form-control" id="data-name" placeholder="您上传资料的题目">
+					<input name="massagename" type="text" maxlength="15" required="required" class="form-control" id="data-name" placeholder="您上传资料的题目">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-4">
-					<textarea name="massageintroduce" class="form-control"  id="" cols="48" rows="8" placeholder="您上传资料的简介"></textarea>
+					<textarea name="massageintroduce" maxlength="100" required="required" class="form-control"  id="" cols="48" rows="8" placeholder="您上传资料的简介(100字以内)"></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 			    <div class="col-sm-offset-4 col-sm-4">
 				    <label for="exampleInputFile">选择文件</label>
-				    <input type="file" id="exampleInputFile" name="file">
+				    <input required="required" type="file" id="exampleInputFile" name="file">
 				    <p class="help-block">只支持.zip/.rar后缀名文件</p>
 			    </div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-4">
 					<label class="radio-inline">
-					<input name="uploadtype" type="radio" id="inlineRadio1" value="阅读"> 阅读
+					<input name="uploadtype" type="radio" required="required" id="inlineRadio1" value="阅读"> 阅读
 					</label>
 					<label class="radio-inline">
-					<input name="uploadtype" type="radio" id="inlineRadio2" value="听力"> 听力
+					<input name="uploadtype" type="radio" required="required" id="inlineRadio2" value="听力"> 听力
 					</label>
 					<label class="radio-inline">
-					<input name="uploadtype" type="radio" id="inlineRadio3" value="写作"> 写作
+					<input name="uploadtype" type="radio" required="required" id="inlineRadio3" value="写作"> 写作
 					</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-6">
-					<input type="submit" class="col-sm-8 btn btn-success"  value="上传文件"/>
+					<input type="submit" class="col-sm-8 btn btn-info"  value="上传"/>
 				</div>
 				<br />
 				<div class="col-sm-offset-4 col-sm-6 btn1">
-					<button type="reset" class="col-sm-8 btn btn-danger">重设</button>
+					<button type="reset" class="col-sm-8 btn btn-success">重设</button>
 				</div>
 			</div>
 		</form>
 	</div>
-
+	<%
+		if (((String) session.getAttribute("tip_uploadsuccess"))!=null) {
+	%>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">上传成功！</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+	</div>
+	<% } %>
 </body>
 </html>
+<%
+	stmt.close();
+	con.close();
+%>

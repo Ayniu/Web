@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
      <% String choose = request.getParameter("choose");
         String ischoose= request.getParameter("ischoose");%>
-     <!-- 保存留言，插入留言数据 -->
+     
 			<%
 			   if(ischoose.equals("true")&&choose.equals("all")){
 			    String message_sql = "select * from upload order by uploaddate DESC";
@@ -123,5 +123,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			%>
   </body>
 </html>
-  
+<%
+	stmt.close();
+	con.close();
+%>
  
