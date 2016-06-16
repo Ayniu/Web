@@ -131,7 +131,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<div class="row">
       			<h3 class="header">阅读</h3>
 
-      			<p><a class="more" href="#">查看更多</a></p>
+      			<p><a class="more" href="datalist.jsp">查看更多</a></p>
 
       			<div class="col-sm-6">
         			<div class="row">
@@ -182,7 +182,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<div class="row">
       			<h3 class="header">听力</h3>
 
-      			<p><a class="more" href="#">查看更多</a></p>
+      			<p><a class="more" href="datalist.jsp">查看更多</a></p>
 
       			<div class="col-sm-6 ">
       				<div class="bigimg fleft" id="bigerimg">
@@ -233,7 +233,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<div class="row">
       			<h3 class="header">写作</h3>
 
-      			<p><a class="more" href="#">查看更多</a></p>
+      			<p><a class="more" href="datalist.jsp">查看更多</a></p>
 
       			<div class="row">
       				<div class="col-sm-4 smallimg">

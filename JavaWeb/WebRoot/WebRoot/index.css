@@ -1,0 +1,259 @@
+.header
+{
+    font-family: 微软雅黑;
+    font-size: 32px;
+
+    margin: 0;
+    margin-bottom: 0;
+    padding-top: 50px;
+
+    text-align: center;
+}
+.header:after
+{
+    display: block;
+
+    width: 70px;
+    margin: 20px auto 0;
+
+    content: '';
+
+    border-bottom: 2px solid #ff4e53;
+}
+.more
+{
+    font-family: 微软雅黑;
+    font-size: 16px;
+
+    display: inline-block;
+
+    margin-top: 18px;
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    color: #f7565b;
+}
+a
+{
+    text-decoration: none;
+}
+p
+{
+    font-family: 微软雅黑;
+    line-height: 28px;
+
+    display: block;
+
+    margin: 0 0 10px;
+
+    text-align: center;
+
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+}
+.feature-icon
+{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-family: 微软雅黑;
+    font-weight: 400;
+    line-height: 1.1;
+
+    text-align: center;
+
+    color: #555;
+}
+h4
+{
+    font-size: 25px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.bigimg
+{
+    margin-top: 35px;
+    margin-bottom: 85px;
+}
+.row > .smallimg
+{
+    padding-bottom: 120px;
+}
+/*听力三小图遮罩层*/
+#line_detail
+{
+    position: absolute;
+    top: -100%;
+    right: 0;
+
+    width: 310px;
+    height: 200px;
+
+    cursor: pointer;
+    -webkit-transition: top 350ms; /* Safari 和 Chrome */
+       -moz-transition: top 350ms; /* Firefox 4 */
+         -o-transition: top 350ms;
+            transition: top 350ms;
+
+    opacity: .6;
+    background: black;
+
+    filter: alpha(opacity=.6);
+}
+
+/*听力三小图遮罩层*/
+#lineleft:hover #line_detail
+{
+    top: 0;
+}
+#linemid:hover #line_detail
+{
+    top: 0;
+}
+#lineright:hover #line_detail
+{
+    top: 0;
+}
+#line_detail p
+{
+    font-family: Helvetica;
+    font-size: 15px;
+
+    position: relative;
+    top: 40%;
+    left: 30%;
+
+    color: white;
+}
+
+#linedown img
+{
+    width: 310px;
+    height: 200px;
+}
+
+#lineleft
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 310px;
+    height: 200px;
+    /* border: 1px solid black; */
+    margin-left: 6px;
+
+    cursor: pointer;
+}
+.fleft
+{
+    float: left;
+}
+
+#bigerimg
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 455px;
+    height: 380px;
+    margin-top: 12px;
+    /*border:1px solid black;*/
+    margin-left: 8px;
+
+    cursor: pointer;
+}
+#bigerimg img
+{
+    position: relative;
+
+    width: 455px;
+    height: 380px;
+}
+
+
+/* 大图遮罩层*/
+#bigerimg:hover #bigimg_detail
+{
+    left: 0;
+
+    display: block;
+}
+#bigimg_detail
+{
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+
+    overflow: hidden;
+
+    width: 455px;
+    height: 380px;
+
+    cursor: pointer;
+    -webkit-transition: left 500ms; /* Safari 和 Chrome */
+       -moz-transition: left 500ms; /* Firefox 4 */
+         -o-transition: left 500ms;
+            transition: left 500ms;
+
+    opacity: .7;
+    color: white;
+    border: 1px solid black;
+    background: black;
+
+    filter: alpha(opacity=.7);
+}
+#bigimg_detail p
+{
+    font-size: 12px;
+    font-weight: normal;
+
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+}
+
+#bigerimg:hover #bigimg2_detail
+{
+    right: 0;
+}
+#bigimg2_detail
+{
+    position: absolute;
+    right: -100%;
+    bottom: 0;
+
+    width: 455px;
+    height: 380px;
+
+    cursor: pointer;
+    -webkit-transition: right 500ms; /* Safari 和 Chrome */
+       -moz-transition: right 500ms; /* Firefox 4 */
+         -o-transition: right 500ms;
+            transition: right 500ms;
+
+    opacity: .7;
+    background: black;
+
+    filter: alpha(opacity=.7);
+}
+#bigimg2_detail p
+{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+
+    color: white;
+}

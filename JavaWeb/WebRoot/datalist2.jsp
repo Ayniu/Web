@@ -127,7 +127,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<%=note.getDataname()%>
 					</h4>
 					<p><%=note.getDataintroduce()%></p>
-					   <button type="button" class="btn btn-danger btn-sm">
+					   <button type="button" class="btn btn-primary btn-sm">
 							<a style="text-decoration:none; color:#ffffff"
 								href="file/<%=note.getDatapath()%>">下载</a>
 						</button>
@@ -145,7 +145,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="sidebar">
 					<!--通过给按钮添加 .btn-block 类可以将其拉伸至父元素100%的宽度，而且按钮也变为了块级（block）元素-->
 					<a href="uploadface.jsp" class="btn btn-info btn-block">上传文件</a>
-					<!-- <a href="#" class="btn btn-danger btn-block">下载文件</a> -->
+					<a href="datalistfindmine.jsp" class="btn btn-danger btn-block">我的上传</a>
 				</div>
 				<div class="sidebar-column" id="tags">
 					<h4 class="header">热门标签</h4>
@@ -159,9 +159,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div>
 			    <form action="searchdata.jsp" class="form-horizontal">
-				  <div class="col-sm-offset-2 col-sm-8">
+				  <div class="side-search col-sm-8">
 					<input name="searchtext" type="text" class="form-control" id="data-name" placeholder="请输入资料题目">
-                    <button type="submit" class="btn btn-danger btn-sm">搜索</button>
+				  </div>
+				  <div class="col-sm-4"></div><button type="submit" class="btn btn-danger btn-sm">搜索</button>
 				  </div>
 				  </form>
 			    </div>

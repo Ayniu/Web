@@ -143,12 +143,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="sidebar">
 					<!--通过给按钮添加 .btn-block 类可以将其拉伸至父元素100%的宽度，而且按钮也变为了块级（block）元素-->
 					<a href="writearticle.jsp" class="btn btn-info btn-block">发布文章</a>
+					<a href="articlemine.jsp" class="btn btn-danger btn-block">我的文章</a>
 				</div>
 			</div>
 			
 		</div>
 	</div>
-	
+	<% 
+	if(((String) session.getAttribute("tip_articlesuccessful")) != null){
+   	        %>
+  	         	<script type="text/javascript">
+  	   	  		 alert("发表成功！");
+  	       	    </script>
+  	   	    <%
+   	       }
+		session.removeAttribute("tip_articlesuccessful");
+		
+		if(((String) session.getAttribute("tip_alogin")) != null){
+   	        %>
+  	         	<script type="text/javascript">
+  	   	  		 alert("请先登录再进行操作哦！");
+  	       	    </script>
+  	   	    <%
+   	       } 
+   	    
+	      session.removeAttribute("tip_alogin");
+	%>
 	<!--页脚信息
 	<footer>
 		<div class="footer">

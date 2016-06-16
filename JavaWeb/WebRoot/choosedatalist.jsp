@@ -19,7 +19,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   
      <% String choose = request.getParameter("choose");
-        String ischoose= request.getParameter("ischoose");%>
+        String ischoose= request.getParameter("ischoose");
+        String indexchoose=request.getParameter("indexchoose");%>
      
 			<%
 			   if(ischoose.equals("true")&&choose.equals("all")){
