@@ -96,7 +96,7 @@ h4
     position: absolute;
     top: -100%;
     right: 0;
-
+    
     width: 310px;
     height: 200px;
 
@@ -128,11 +128,11 @@ h4
 #line_detail p
 {
     font-family: Helvetica;
-    font-size: 15px;
+    font-size: 25px;
 
     position: relative;
-    top: 40%;
-    left: 30%;
+    top: 30%;
+    left: 0%;
 
     color: white;
 }
@@ -217,12 +217,12 @@ h4
 }
 #bigimg_detail p
 {
-    font-size: 12px;
+    font-size: 40px;
     font-weight: normal;
 
     position: absolute;
-    bottom: 25px;
-    left: 20px;
+    bottom: 140px;
+    left: 160px;
 }
 
 #bigerimg:hover #bigimg2_detail
@@ -252,8 +252,9 @@ h4
 #bigimg2_detail p
 {
     position: absolute;
-    bottom: 15px;
-    left: 20px;
+    font-size: 40px;
+    bottom: 140px;
+    left: 160px;
 
     color: white;
 }

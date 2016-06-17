@@ -17,8 +17,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <%     
-           String username=(String)session.getAttribute("name");
+  <%       
+  			String username=(String)session.getAttribute("name");
+  			if(username!=null){
 				String message_sql = "select * from upload where useid='"+username+"' order by uploaddate DESC";
 				ResultSet rs = stmt.executeQuery(message_sql);
 				List<DataListBean> list = new ArrayList<DataListBean>();
@@ -41,7 +42,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				} catch (Exception e) {
 					out.print("请重试！");
 				}
-			 
+  			}else{
+  				session.setAttribute("tip_dlogin","successful");
+  				response.sendRedirect("datalist.jsp");
+  			}
          
      	stmt.close();
      	con.close();

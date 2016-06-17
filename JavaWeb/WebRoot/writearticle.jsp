@@ -23,10 +23,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="articlecontent.css">
-	
+	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
 	<script charset="utf-8" src="kindeditor.js"></script>
 	<script charset="utf-8" src="lang/zh_CN.js"></script>
 	<script charset="utf-8" src="plugins/code/prettify.js"></script>
+	<!-- 背景图片 --> 
+	<style type="text/css">
+		body {
+			background-image:url(photo/write-paper.jpg);
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+	</style>  
 	<script type="text/javascript" charset="utf-8" src="kindeditor.js"></script><!-- 添加kindeditor的引用 -->     
 		<script type="text/javascript">     
 				KindEditor.ready(function(K) {
@@ -77,6 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
 					<li><a href="articlelist.jsp">文章中心</a></li>
+					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">

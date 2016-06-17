@@ -23,6 +23,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="datalist.css">
+	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
+	<!-- 背景图片 --> 
+	<style type="text/css">
+		body {
+			background-image:url(photo/articlelist-bg.jpg);
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+	</style>
 </head>
 
 <body>
@@ -44,6 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
 					<li><a href="articlelist.jsp">文章中心</a></li>
+					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -145,6 +155,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="writearticle.jsp" class="btn btn-info btn-block">发布文章</a>
 					<a href="articlemine.jsp" class="btn btn-danger btn-block">我的文章</a>
 				</div>
+				<!-- 6.17中午加图片广告 css文件也修改了 -->
+				<div class="sidebar-column" id="tags">
+					<h4 class="header">友情链接</h4>
+					<div>
+						<a href="https://www.quora.com/" target="_blank"><img src="photo\quora-ad.png" alt="quora.png" width=260 height=110></a>
+					</div>
+					<br>
+					<div>
+						<a href="https://www.shanbay.com/" target="_blank"><img src="photo\shanbei-ad.jpg" alt="shanbei.png" width=260 height=110></a>
+					</div>
+					<br>
+					<div>
+						<a href="http://translate.google.cn/" target="_blank"><img src="photo\google-ad.jpg" alt="google.jpg" width=260 height=110></a>
+					</div>
+				</div>
+				
 			</div>
 			
 		</div>
@@ -159,7 +185,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	       }
 		session.removeAttribute("tip_articlesuccessful");
 		
-		if(((String) session.getAttribute("tip_alogin")) != null){
+		if(((String) session.getAttribute("tip_alogin")) != null||((String) session.getAttribute("tip_mlogin")) != null){
    	        %>
   	         	<script type="text/javascript">
   	   	  		 alert("请先登录再进行操作哦！");
@@ -168,6 +194,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	       } 
    	    
 	      session.removeAttribute("tip_alogin");
+	      session.removeAttribute("tip_mlogin");
 	%>
 	<!--页脚信息
 	<footer>

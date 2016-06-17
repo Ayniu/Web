@@ -23,6 +23,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="datalist.css">
+	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
+	<!-- 背景图片 --> 
+	<style type="text/css">
+		body {
+			/* background-image:url(photo/datalist-bg.jpg); */
+			backgroud:#f2f2f2;
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+	</style>
 </head>
 
 <body>
@@ -45,6 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
 					<li><a href="articlelist.jsp">文章中心</a></li>
+					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -131,6 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<a style="text-decoration:none; color:#ffffff"
 								href="file/<%=note.getDatapath()%>">下载</a></button> --%>
 					   <form action="dodatalistdelete.jsp" class="form-horizontal">
+					   <input type="text" value="file/<%=note.getDatapath()%>" name="datapath" hidden="true" />
 					   <input type="text" value="<%=note.getDataname()%>" name="dataname" hidden="true" />
 					   <button type="submit" class="btn btn-danger btn-sm" 
 						    data-toggle="modal" data-target="#detail">删除</button>

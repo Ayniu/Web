@@ -22,6 +22,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="datalist.css">
+	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
+	<!-- 背景图片 -->
+	<style type="text/css">
+		body {
+			background-image:url(photo/message-bg.jpg);
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+	</style>
 </head>
 <body>
 	<head>
@@ -42,6 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
 					<li><a href="articlelist.jsp">文章中心</a></li>
+					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">

@@ -23,6 +23,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="datalist.css">
+	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
+	<!-- 背景图片 --> 
+	<style type="text/css">
+		body {
+			/* background-image:url(photo/datalist-bg.jpg); */
+			backgroud:#f2f2f2;
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+	</style>
 </head>
 
 <body>
@@ -45,6 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
 					<li><a href="articlelist.jsp">文章中心</a></li>
+					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -158,14 +169,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</p></form>
 				</div>
 				<div>
-			    <form action="searchdata.jsp" class="form-horizontal">
-				  <div class="side-search col-sm-8">
-					<input name="searchtext" type="text" class="form-control" id="data-name" placeholder="请输入资料题目">
-				  </div>
-				  <div class="col-sm-4"></div><button type="submit" class="btn btn-danger btn-sm">搜索</button>
-				  </div>
-				  </form>
-			    </div>
+				    <form action="searchdata.jsp" class="form-horizontal">
+					  <div class="side-search col-sm-8">
+						<input name="searchtext" type="text" class="form-control" id="data-name" placeholder="请输入资料题目">
+					  </div>
+					  <div class="col-sm-4"></div><button type="submit" class="btn btn-danger btn-sm">搜索</button>
+					  </form>
+				</div>
+			   <br>
+			    
+			    
+			    <!-- 6.17 中午加入ad图片，css修改了了slide -->
+			    <div id="myCarousel" class="carousel slide " data-ride="carousel" data-interval="3000">
+					<div class="carousel-inner">
+						<div class="item active">
+							<a href="index.jsp" target="_blank"><img src="photo\ad1.jpg" alt="ad1.jpg"></a>
+						</div>
+						<div class="item">
+							<!-- 英孚英语 --><a href="http://www.ef.com.cn/englishfirst/default.aspx" target="_blank"><img src="photo\ad2.jpg" alt="ad2.jpg"></a>
+						</div>
+						<div class="item">
+							<!-- 沪江英语 --><a href="http://www.hjenglish.com/" target="_blank"><img src="photo\ad3.jpg" alt="ad3.jpg"></a>
+						</div>
+						<div class="item">
+							<!-- 新东方英语 --><a href="http://yingyu.xdf.cn/" target="_blank"><img src="photo\ad4.png" alt="ad4.jpg"></a>
+						</div>
+					</div>	
+				</div>
 			    
 			</div>
 		</div>

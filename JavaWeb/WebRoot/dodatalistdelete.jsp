@@ -1,5 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="utf-8"%>
-<%@ page import="Bean.*,com.jspsmart.upload.*,java.util.*,java.sql.*,java.text.*"%>
+<%@ page import="Bean.*,com.jspsmart.upload.*,java.io.*,java.util.*,java.sql.*,java.text.*"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <%
 String path = request.getContextPath();
@@ -17,7 +17,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <%       String dataname;
+  <%       String datapath;
+           String dataname;
+           datapath=request.getParameter("datapath");
            dataname=request.getParameter("dataname");
            String username=(String)session.getAttribute("name");
 				String delete_sql = "delete from upload where useid='"+username+"' and massagename='"+dataname+"'";
@@ -25,7 +27,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				stmt.executeUpdate(delete_sql); 
 				
 				try {
-					response.sendRedirect("datalistfindmine.jsp");
+				//删除文件
+				File file=new File("D:/Web/tomcat/webapps/JavaWeb/"+datapath);
+				if(file.exists())
+				{ file.delete(); }
+				    /* out.print("D:/Web/tomcat/webapps/JavaWeb/"+datapath); */
+				    response.sendRedirect("datalistfindmine.jsp"); 
 				} catch (Exception e) {
 					out.print("请重试！");
 				}

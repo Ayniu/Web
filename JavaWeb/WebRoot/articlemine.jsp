@@ -23,6 +23,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="datalist.css">
+	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
+	<!-- 背景图片 --> 
+	<style type="text/css">
+		body {
+			background-image:url(photo/articlelist-bg.jpg);
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+	</style>
 </head>
 
 <body>
@@ -44,6 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
 					<li><a href="articlelist.jsp">文章中心</a></li>
+					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -78,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</nav>
 	</head>
 	<%
-			    
+			    if(username!=null){
 				String message_sql = "select * from article where useid='"+username+"' order by time DESC";
 				ResultSet rs = stmt.executeQuery(message_sql);
 				List<ArticleListBean> list = new ArrayList<ArticleListBean>();
@@ -100,6 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="row" id="#">
 			<div class="col-sm-9">
 			<%
+						
 						if (list == null || list.size() < 1) {
 							out.print("<tr bgcolor='#FFFFFF' colspan='5'>没有任何文章哦！</tr>");
 						} else {
@@ -140,8 +151,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>	
 				<%
-	 		 	}
-	 		}
+	 		 		}
+	 			}
+			}else{
+				session.setAttribute("tip_mlogin","successful");
+  				response.sendRedirect("articlelist.jsp");
+			}
 	 			%>		
 			</div>
 			<div class="col-sm-3">
@@ -149,30 +164,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<!--通过给按钮添加 .btn-block 类可以将其拉伸至父元素100%的宽度，而且按钮也变为了块级（block）元素-->
 					<a href="writearticle.jsp" class="btn btn-info btn-block">发布文章</a>
 				</div>
+				
 			</div>
 			
 		</div>
 	</div>
-	<% 
-	if(((String) session.getAttribute("tip_articlesuccessful")) != null){
-   	        %>
-  	         	<script type="text/javascript">
-  	   	  		 alert("发表成功！");
-  	       	    </script>
-  	   	    <%
-   	       }
-		session.removeAttribute("tip_articlesuccessful");
-		
-		if(((String) session.getAttribute("tip_alogin")) != null){
-   	        %>
-  	         	<script type="text/javascript">
-  	   	  		 alert("请先登录再进行操作哦！");
-  	       	    </script>
-  	   	    <%
-   	       } 
-   	    
-	      session.removeAttribute("tip_alogin");
-	%>
+
 	<!--页脚信息
 	<footer>
 		<div class="footer">

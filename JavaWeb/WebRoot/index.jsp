@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="index.css">
+	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
 </head>
 <body>
 	<head>
@@ -42,6 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="datalist.jsp">资料库</a></li>
 					<li><a href="message.jsp">留言板</a></li>
 					<li><a href="articlelist.jsp">文章中心</a></li>
+					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -76,17 +78,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</nav>
 	</head>
 
-	<!--返回顶部
-		<div onclick="pageScroll()" id="backtop">
-			<p>返回<br/>顶部</p>
-		</div>-->
-
-	
 	<!--carousel组件，BootStrap的一个图片轮播组件-->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="#">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="photo/default.jpg" class="first-slide" alt="#.jpg">
+				<img src="photo/first-big.jpg" class="first-slide" alt="#.jpg">
 					<div class="container">
 						<div class="carousel-caption">
 							<form action="searchdata.jsp" class="col-md-8 col-md-offset-2" role="search" mether="get">
@@ -100,77 +96,52 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>	
 	</div>
 
-
-	<!--一行排列3个图标
-	<div class="container">
-		<div class="row paper-list">
-			<div class="col-sm-4 paper">
-				<img src="#" alt="#" class="img-circle img-thumbnail" 
-				style="width:140px;height:140px;max-width:140px;">
-				<h2>LISTEN</h2>
-				<p><a href="#">11111</a></p>
-				
-			</div>
-			<div class="col-sm-4 paper">
-				<img src="#" alt="#" class="img-circle img-thumbnail" style="width:140px;height:140px;max-width:140px;">
-				<h2>READ</h2>
-				<p><a href="#">11111</a></p>
-				
-			</div>
-			<div class="col-sm-4 paper">
-				<img src="#" alt="#" class="img-circle img-thumbnail" style="width:140px;height:140px;max-width:140px;">
-				<h2>WRITE</h2>
-				<p><a href="#">11111</a></p>
-				
-			</div>
-		</div>
-	</div>-->
 	<!--阅读-->
 	<section class="ad-features ad">
   		<div class="container">
     		<div class="row">
-      			<h3 class="header">阅读</h3>
-
-      			<p><a class="more" href="datalist.jsp">查看更多</a></p>
-
+      			<div align="center">
+      				<a href="datalist.jsp"><img src="photo/word-read.jpg" alt="" height="200"></a>
+      			</div>
+      			
       			<div class="col-sm-6">
         			<div class="row">
          				<div class="col-sm-6 feature-list" align="center">
             				<div class="feature-icon">
-            					<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100">
+            					<img src="photo/333.jpg" alt="#" class="img-circle" width="100" height="100">
             				</div>
-			            		<h4> 超级名师 </h4>
-			            		<p>导师来自北京大学计算机专业的老师和业界一流的工程师，帮助你快速成长</p>
+			            		<h4>阅读题目 </h4>
+			            		<p>汇聚最新题目，让你体验最新的题型</p>
 			            </div>
 			            <div class="col-sm-6 feature-list">
 				            <div class="feature-icon" align="center">
-				            	<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100"></div>
-					            <h4>求职必备</h4>
-					            <p> 导师们最大的烦恼就是每天各路公司求他们推荐程序员，帮帮他们吧，快到碗里来 </p>
+				            	<img src="photo/444.jpg" alt="#" class="img-circle" width="100" height="100"></div>
+					            <h4>阅读练习</h4>
+					            <p>神助攻练习题，助你攻陷阅读题 </p>
 			            </div>
 			        </div>
 			        <div class="row">
 			            <div class="col-sm-6 feature-list" align="center">
 			            	<div class="feature-icon">
-			            		<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100"></div>
-						        <h4>实战导向</h4>
-						       	<p>图文、代码与视频有机结合的实战课程内容，打造真实的项目，最佳实践一网打尽</p>
+			            		<img src="photo/111.jpg" alt="#" class="img-circle" width="100" height="100"></div>
+						        <h4>答案分析</h4>
+						       	<p>答案专业分析，助你答题思路清晰</p>
 			            </div>
 
 			            <div class="col-sm-6 feature-list">
 				            <div class="feature-icon" align="center">
-				            	<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100"></div>
-				            	<h4>专业工具</h4>
-				            	<p> 随时随地学习在线学习，记录完整的学习过程与轨迹，沉淀终生受益的代码和内容 </p>
+				            	<img src="photo/222.jpg" alt="#" class="img-circle" width="100" height="100"></div>
+				            	<h4>阅读资料</h4>
+				            	<p>阅读资料共享，成就高分梦想 </p>
 			            </div>
 			        </div>
 			    </div>
       			<div class="col-sm-6 ">
       				<div class="bigimg fleft" id="bigerimg">
-      					<img src="img/3.jpg" alt="#" width="455" height="380">
-      					<a href="#">
+      					<img src="photo/reading1.jpg" alt="#" width="455" height="380">
+      					<a href="test.jsp">
       						<div id="bigimg2_detail">
-      							<p>发现更多</p>
+      							<p>立即查看</p>
       						</div>
       					</a>
       				</div>
@@ -180,16 +151,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<section class="ad-features ad">
   		<div class="container">
     		<div class="row">
-      			<h3 class="header">听力</h3>
-
-      			<p><a class="more" href="datalist.jsp">查看更多</a></p>
+      			<div align="center">
+      				<a href="datalist.jsp"><img src="photo/word-listen.jpg" alt="" height="200"></a>
+      			</div>
 
       			<div class="col-sm-6 ">
       				<div class="bigimg fleft" id="bigerimg">
-      					<img src="img/3.jpg" alt="#" width="455" height="380">
-      					<a href="#">
+      					<img src="photo/listening2.jpg" alt="#" width="455" height="380">
+      					<a href="datalist.jsp">
       						<div id="bigimg_detail">
-      							<p>发现更多</p>
+      							<p>立即查看</p>
       						</div>
       					</a>
       				</div>
@@ -198,31 +169,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         			<div class="row">
          				<div class="col-sm-6 feature-list" align="center">
             				<div class="feature-icon">
-            					<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100">
+            					<img src="photo/333.jpg" alt="#" class="img-circle" width="100" height="100">
             				</div>
-			            		<h4> 超级名师 </h4>
-			            		<p>导师来自北京大学计算机专业的老师和业界一流的工程师，帮助你快速成长</p>
+			            		<h4>听力题目 </h4>
+			            		<p>拥有最新听力题型，给你考场般的体验 </p>
 			            </div>
 			            <div class="col-sm-6 feature-list">
 				            <div class="feature-icon" align="center">
-				            	<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100"></div>
-					            <h4>求职必备</h4>
-					            <p> 导师们最大的烦恼就是每天各路公司求他们推荐程序员，帮帮他们吧，快到碗里来 </p>
+				            	<img src="photo/222.jpg" alt="#" class="img-circle" width="100" height="100"></div>
+					            <h4>听力音效</h4>
+					            <p>具备优质音效，带给你听觉上的盛宴</p>
 			            </div>
 			        </div>
 			        <div class="row">
 			            <div class="col-sm-6 feature-list" align="center">
 			            	<div class="feature-icon">
-			            		<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100"></div>
-						        <h4>实战导向</h4>
-						       	<p>图文、代码与视频有机结合的实战课程内容，打造真实的项目，最佳实践一网打尽</p>
+			            		<img src="photo/111.jpg" alt="#" class="img-circle" width="100" height="100"></div>
+						        <h4>答案解析</h4>
+						       	<p>拥有英语全文及中文答案解释，想不懂都难</p>
 			            </div>
 
 			            <div class="col-sm-6 feature-list">
 				            <div class="feature-icon" align="center">
-				            	<img src="img/1.jpg" alt="#" class="img-circle" width="100" height="100"></div>
-				            	<h4>专业工具</h4>
-				            	<p> 随时随地学习在线学习，记录完整的学习过程与轨迹，沉淀终生受益的代码和内容 </p>
+				            	<img src="photo/444.jpg" alt="#" class="img-circle" width="100" height="100"></div>
+				            	<h4>听力材料</h4>
+				            	<p>汇聚大家的听力精华，百万资料随你下载，再也不怕没有听力资源啦 </p>
 			            </div>
 			        </div>
 			    </div>
@@ -231,44 +202,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<section class="ad-features ad">
   		<div class="container">
     		<div class="row">
-      			<h3 class="header">写作</h3>
-
-      			<p><a class="more" href="datalist.jsp">查看更多</a></p>
+      			<div align="center">
+      				<a href="datalist.jsp"><img src="photo/word-write.jpg" alt="" height="200"></a>
+      			</div>
 
       			<div class="row">
       				<div class="col-sm-4 smallimg">
       					<div class="fleft" id="lineleft">
-	      					<img src="img/3.jpg" alt="#" width="310" height="200" class="center-block">
-	      					<a href="#">
+	      					<img src="photo/skill.jpg" alt="#" width="310" height="200" class="center-block">
+	      					<a href="datalist.jsp">
 	      						<div id="line_detail">
-	      							<p>发现更多</p>
+	      							<p>立即查看</p>
 	      						</div>
 	      					</a>
       					</div>
       				</div>
       				<div class="col-sm-4 smallimg">
       					<div class="fleft" id="lineleft">
-      						<img src="img/3.jpg" alt="#" width="310" height="200" class="center-block">
-      						<a href="#">
+      						<img src="photo/composition-template.jpg" alt="#" width="310" height="200" class="center-block">
+      						<a href="test.jsp">
       							<div id="line_detail">
-      								<p>发现更多</p>
+      								<p>立即查看</p>
       							</div>
       						</a>
       					</div>
       				</div>
       				<div class="col-sm-4 smallimg">
       					<div class="fleft" id="lineleft">     					
-      						<img src="img/3.jpg" alt="#" width="310" height="200" class="center-block">
-      						<a href="#">
+      						<img src="photo/writing-more.jpg" alt="#" width="310" height="200" class="center-block">
+      						<a href="articlelist.jsp">
       							<div id="line_detail">
-      								<p>发现更多</p>
+      								<p>立即查看</p>
       							</div>
       						</a>
       					</div>
       				</div>
       			</div>
 	</section>
-
+	
 	<!--页脚信息-->
 	<footer>
 		<div class="footer">
