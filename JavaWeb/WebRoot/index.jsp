@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="footer.css">
+	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="index.css">
 	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
 </head>
@@ -36,14 +36,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><b>主页</b></a>
+				<a class="navbar-brand" href="index.jsp"><b>学汇英语</b></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="datalist.jsp">资料库</a></li>
+					<li><a href="datalist.jsp">资料汇</a></li>
+					<li><a href="articlelist.jsp">文章汇</a></li>
+					<li><a href="test.jsp">知识汇</a></li>
 					<li><a href="message.jsp">留言板</a></li>
-					<li><a href="articlelist.jsp">文章中心</a></li>
-					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -243,10 +243,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--页脚信息-->
 	<footer>
 		<div class="footer">
-			<p>build by cjl-scau</p>
+			<p clsss=""info>Copyright&nbsp;&copy;&nbsp;学汇英语&nbsp;&nbsp; BUILD BY MST小分队</p>&nbsp;
 		</div>
 	</footer>
-
 </body>
 </html>
 <%

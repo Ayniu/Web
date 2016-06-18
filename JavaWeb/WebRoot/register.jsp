@@ -26,14 +26,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><b>主页</b></a>
+				<a class="navbar-brand" href="index.jsp"><b>学汇英语</b></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="datalist.jsp">资料库</a></li>
+					<li><a href="datalist.jsp">资料汇</a></li>
+					<li><a href="articlelist.jsp">文章汇</a></li>
+					<li><a href="test.jsp">知识汇</a></li>
 					<li><a href="message.jsp">留言板</a></li>
-					<li><a href="articlelist.jsp">文章中心</a></li>
-					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 			</div>
 		</div>
@@ -50,13 +50,13 @@
 					名字
 				</label>-->
 				<div class="col-sm-offset-4 col-sm-4">
-					<input name="username" maxlength="15" required="required" type="text" class="form-control" id="inputname" placeholder="请输入4-15位的用户名" >
+					<input name="username" maxlength="15" required="required" type="text" class="form-control" id="inputname" placeholder="请输入用户名" >
 				</div>
 			</div>
 			<div class="form-group">
 				<!--<label for="inputpasswoed" class="col-sm-2 control-label">密码</label>-->
 				<div class="col-sm-offset-4 col-sm-4">
-					<input name="password" maxlength="15" required="required" type="password" class="form-control" id="inputpassword" placeholder="请输入6-20位的密码" >
+					<input name="password" maxlength="15" required="required" type="password" class="form-control" id="inputpassword" placeholder="请输入密码" >
 				</div>
 			</div>
 			<div class="form-group">

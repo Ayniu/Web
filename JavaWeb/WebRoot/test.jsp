@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>原题库</title>
+	<title>知识</title>
 	<!--链接BootStrap的css文件-->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -24,6 +24,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="css/test.css">
 	
 	<link rel="shortcut icon" href="photo/myicon.ico" media="screen" />
+	<style type="text/css">
+		body {
+			background:#F2f2f2;
+			/* background-image:url(photo/articlelist-bg.jpg); */
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+	</style>
 </head>
 <body>
 	<head>
@@ -37,14 +45,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><b>主页</b></a>
+				<a class="navbar-brand" href="index.jsp"><b>学汇英语</b></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="datalist.jsp">资料库</a></li>
+					<li><a href="datalist.jsp">资料汇</a></li>
+					<li><a href="articlelist.jsp">文章汇</a></li>
+					<li><a href="test.jsp">知识汇</a></li>
 					<li><a href="message.jsp">留言板</a></li>
-					<li><a href="articlelist.jsp">文章中心</a></li>
-					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
@@ -398,7 +406,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					    <div class="panel-heading" role="tab" id="headingTwo">
 					      	<h4 class="panel-title">
 					        	<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-					          		英语六级阅读模拟题一
+					          		英语六级阅读模拟题二
 					        	</a>
 					     	</h4>
 					    </div>
@@ -410,9 +418,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  	
 					</div>
 				</div>
-
-
 			</div>
+				
+				<div class="col-sm-3">
+					<div class="music">
+						<iframe frameborder="no" border="0" 
+	marginwidth="0" marginheight="0" width=330 height=450 
+	src="http://music.163.com/outchain/player?type=0&id=65059331&auto=0&height=430"></iframe>
+					</div>
+				</div>
+
+
+			
 		</div>
 	</div>
 	

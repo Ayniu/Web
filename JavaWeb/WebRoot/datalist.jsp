@@ -27,8 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 背景图片 --> 
 	<style type="text/css">
 		body {
-			/*background-image:url(photo/datalist-bg.jpg);*/
-			backgroud:#f2f2f2;
+			background:#F2f2f2;
+			/* background-image:url(photo/articlelist-bg.jpg); */
 			background-repeat:no-repeat;
 			background-attachment:fixed
 		}
@@ -47,14 +47,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><b>主页</b></a>
+				<a class="navbar-brand" href="index.jsp"><b>学汇英语</b></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="datalist.jsp">资料库</a></li>
+					<li><a href="datalist.jsp">资料汇</a></li>
+					<li><a href="articlelist.jsp">文章汇</a></li>
+					<li><a href="test.jsp">知识汇</a></li>
 					<li><a href="message.jsp">留言板</a></li>
-					<li><a href="articlelist.jsp">文章中心</a></li>
-					<li><a href="test.jsp">原题库</a></li>
 				</ul>
 				
 				<div class="aw-user-nav navbar-form navbar-right">
